@@ -24,7 +24,7 @@
         </activity>
         <activity
             android:name=".CreateEmployeeActivity"
-            android:label="@string/title_activity_create_employee" >
+            android:label="New Employee" >
         </activity>
     </application>
 

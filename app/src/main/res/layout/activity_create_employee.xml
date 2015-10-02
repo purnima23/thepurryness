@@ -44,8 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editText9"
-            android:hint="Name"
-            android:text="ID" />
+            android:hint="id" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -70,8 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editText8"
-            android:hint="Name"
-            android:text="Position" />
+            android:hint="Position" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -96,8 +94,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editText7"
-            android:hint="Name"
-            android:text="Department" />
+            android:hint="department" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.03"
+            android:orientation="vertical" >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText5"
+                android:hint="Personal Phone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter your Personal Phone"
+                android:id="@+id/textView5"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:padding="5dp"
+                android:textStyle="italic"
+                android:textSize="12sp" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -122,8 +143,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editText6"
-            android:hint="Name"
-            android:text="Office phone" />
+            android:hint="officePhone" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -137,45 +157,12 @@
             android:textSize="12sp" />
     </LinearLayout>
 
-    <LinearLayout
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.03"
         android:orientation="vertical" >
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText5"
-            android:hint="Name"
-            android:text="Personal Phone" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enter your Personal Phone"
-            android:id="@+id/textView5"
-            android:gravity="center_horizontal"
-            android:layout_gravity="center_horizontal"
-            android:padding="5dp"
-            android:textStyle="italic"
-            android:textSize="12sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.03"
-        android:orientation="vertical" >
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText4"
-            android:hint="Name"
-            android:text="Email" />
 
     </LinearLayout>
 
@@ -190,8 +177,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editText3"
-            android:hint="Name"
-            android:text="Salary" />
+            android:hint="Salary" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -216,8 +202,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editText"
-            android:hint="Name"
-            android:text="Annual Leave" />
+            android:hint="email" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Do you have a Supervisor ?"
+            android:id="@+id/checkBox"
+            android:checked="true"
+            android:onClick="onToggleSupervisor" />
 
     </LinearLayout>
 
@@ -226,21 +219,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.03"
-        android:orientation="vertical" >
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Do you have a Supervisor ?"
-            android:id="@+id/checkBox"
-            android:checked="false" />
+        android:orientation="vertical"
+        android:id="@+id/ec_supervisorLayout">
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText2"
-            android:hint="Name"
-            android:text="SuperVisor Name" />
+            android:id="@+id/ec_supervisorName"
+            android:hint="SuperVisor Name" />
 
     </LinearLayout>
 

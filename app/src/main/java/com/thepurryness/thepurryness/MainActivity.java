@@ -12,13 +12,25 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 public class MainActivity extends Activity implements TextWatcher, AdapterView.OnItemClickListener {
+    public static EmployeeDatabase.Employee selectedEmployee = null; //global variable  so it would be accessible everywhere - CreateEmployeeActivity
+
 
     EmployeeDatabase db;
+
+    boolean isSelectMode = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.employee_list);
+
+        // Respond to select mode
+        isSelectMode = getIntent().getBooleanExtra("isSelectMode", false);
+        if (isSelectMode) {
+            //Hide the add new button
+            findViewById(R.id.el_newButton).setVisibility(View.GONE);
+        }
 
         db = new EmployeeDatabase(this);
 
@@ -61,11 +73,28 @@ public class MainActivity extends Activity implements TextWatcher, AdapterView.O
         //get employee date form the list
         EmployeeDatabase.Employee employee = (EmployeeDatabase.Employee) parent.getItemAtPosition(position);
 
+        if(isSelectMode) {
+            //Announce to caller that selected
+            selectedEmployee = employee;
+
+            setResult(RESULT_OK);
+
+            finish();
+            return;
+
+        }
+
         // open details activity
         Intent intent = new Intent(this, EmployeeDetailsActivity.class);
         intent.putExtra("id",employee.id );
 
         //to start intention
         startActivity(intent);
+    }
+
+    public void onAddEmployee(View button) {
+      Intent intent = new Intent(this, CreateEmployeeActivity.class);
+        startActivity(intent);
+
     }
 }
